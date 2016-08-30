@@ -1,0 +1,21 @@
+{
+  "name": "client",
+  "homepage": "https://github.com/IharKrasnik/websockets-sample",
+  "authors": [
+    "Ihar Krasnik <ihar.krasnik@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~3.1.0"
+  }
+}

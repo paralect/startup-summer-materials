@@ -1,0 +1,11 @@
+{
+  "name": "",
+  "description": "Challenge points",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "colors": "^1.1.2"
+  }
+}

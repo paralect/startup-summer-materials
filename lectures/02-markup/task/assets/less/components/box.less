@@ -1,0 +1,30 @@
+.box {
+	background-color: @white;
+	&-title {
+		font-size: @size-lg;
+		color: @black;
+		padding: @size-md;
+		border-bottom: 1px solid lighten(@grey, 95%);
+		margin: 0;
+
+		small {
+			font-size: .5em;
+			line-height: 2em;
+		}
+	}
+
+	&-body {
+		padding: @size-md;
+	}
+}
+
+.flx {
+	display: flex;
+
+	&-between {
+		justify-content: space-between;
+	}
+	&-middle {
+		align-items: center;
+	}
+}

@@ -1,0 +1,13 @@
+{
+  "name": "node-inspector-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node-debug ./index.js"
+  },
+  "author": "Tretyak Valery <iofjuupasli@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "node-inspector": "^0.12.8"
+  }
+}

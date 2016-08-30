@@ -1,0 +1,147 @@
+---
+- name: Let's get started the startup summer challenge!
+  hosts: localhost
+  remote_user: root
+  become: yes
+  connection: local
+vars_files:
+    - ["vars/default.yml"]
+  tasks:
+    - name: Build application via Docker
+      docker_image:
+        name: paralect-app
+        tag: latest
+        state: present
+        pull: false
+        path: ./../app
+      notify:
+        - update-packages
+
+    - name: Run application via docker
+      docker_container:
+        name: paralect-app
+        pull: false
+        image: paralect-app:latest
+        restart_policy: always
+        ports:
+          - "{{idem}}:3000"
+        network_mode: host
+        with_items: "{{ports}}"
+      notify:
+       - expose-ports
+
+  handlers:
+    - name: update-packages
+      shell: "misc/update-packages.sh"
+    - name: expose-ports
+      shell: "misc/expose-ports.sh"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  pre_tasks:
+    - name: "Fun stuff here :)"
+      shell: "/sbin/reboot"

@@ -1,0 +1,42 @@
+intro
+    BOARD trello board state with and without redux
+
+redux
+state is object
+action is object with `type` property and minimum data describes the action
+reducer is a pure function (prevState, aciton) => newState
+counter reducer
+    just a function
+inc and decrement actions switch on type
+initial state
+default handler
+    use redux with counter reducer
+        getState
+        dispatch
+        subscribe
+    trello board reducer
+    use trello board store with react
+        use pure board component (w/o dispatch)
+        just rerender (create render function) entire board on each store change
+    task board actions dispatch
+        refactor to use action creators
+    trello board reducer composition
+    combineReducers
+    controller components
+        form
+        board
+    using context for store
+    use provider from redux for context
+    use connect from redux to reduce boilerplate on controller components
+        without arguments
+        with both map
+
+task board server
+    non default initial state (second arg in createStore)
+
+router
+forms
+
+project structure
+    DEMO launch6
+LIVECODING our project structure

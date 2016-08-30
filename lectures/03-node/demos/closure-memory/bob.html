@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bob | Closure memory consumption | Startup Summer 2016 JS Intro</title>
+</head>
+
+<body>
+
+<div>
+    <a href="./index.html">Back...</a>
+</div>
+
+    <pre style="background:#fff;color:#3b3b3b"><span style="color:#ff5600">function</span> <span style="color:#21439c">f</span>() {
+    <span style="color:#ff5600">var</span> value <span style="color:#069;font-weight:700">=</span> [];
+    <span style="color:#069;font-weight:700">for</span> (<span style="color:#ff5600">var</span> j <span style="color:#069;font-weight:700">=</span> <span style="color:#a8017e">0</span>; j <span style="color:#069;font-weight:700">&lt;</span> <span style="color:#a8017e">1000</span>; j<span style="color:#069;font-weight:700">++</span>) {
+        value.<span style="color:#45ae34;font-weight:700">push</span>(j);
+    }
+    <span style="color:#069;font-weight:700">return</span> <span style="color:#ff5600">function</span>(){
+        <span style="color:#069;font-weight:700">return</span> <span style="color:#a535ae">null</span>
+    }
+}
+
+<span style="color:#ff5600">var</span> arr <span style="color:#069;font-weight:700">=</span> []
+<span style="color:#069;font-weight:700">for</span>(<span style="color:#ff5600">var</span> i <span style="color:#069;font-weight:700">=</span> <span style="color:#a8017e">0</span>; i <span style="color:#069;font-weight:700">&lt;</span> <span style="color:#a8017e">100000</span>; i<span style="color:#069;font-weight:700">++</span>) {
+    arr.<span style="color:#45ae34;font-weight:700">push</span>(f());
+}
+
+</pre>
+    <script>
+        var arr = []
+        function yo() {
+            function f() {
+                var value = [];
+                for (var j = 0; j < 1000; j++) {
+                    value.push(j);
+                }
+                return function() {
+                    return null
+                }
+            }
+
+            for (var i = 0; i < 100000; i++) {
+                arr.push(f());
+            }
+        }
+    </script>
+    <button onclick="yo()">Fun!</button>
+</body>
+
+</html>
